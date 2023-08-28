@@ -161,10 +161,10 @@ Note: Upstart/SysV init based OS types are not supported.
 ## Supported Components
 
 - Core
-  - [kubernetes](https://github.com/kubernetes/kubernetes) v1.27.4
+  - [kubernetes](https://github.com/kubernetes/kubernetes) v1.27.5
   - [etcd](https://github.com/etcd-io/etcd) v3.5.6
   - [docker](https://www.docker.com/) v20.10 (see note)
-  - [containerd](https://containerd.io/) v1.7.2
+  - [containerd](https://containerd.io/) v1.7.3
   - [cri-o](http://cri-o.io/) v1.27 (experimental: see [CRI-O Note](docs/cri-o.md). Only on fedora, ubuntu and centos based OS)
 - Network Plugin
   - [cni-plugins](https://github.com/containernetworking/plugins) v1.2.0
@@ -180,7 +180,7 @@ Note: Upstart/SysV init based OS types are not supported.
   - [cert-manager](https://github.com/jetstack/cert-manager) v1.11.1
   - [coredns](https://github.com/coredns/coredns) v1.10.1
   - [ingress-nginx](https://github.com/kubernetes/ingress-nginx) v1.8.1
-  - [krew](https://github.com/kubernetes-sigs/krew) v0.4.3
+  - [krew](https://github.com/kubernetes-sigs/krew) v0.4.4
   - [argocd](https://argoproj.github.io/) v2.8.0
   - [helm](https://helm.sh/) v3.12.3
   - [metallb](https://metallb.universe.tf/)  v0.13.9
