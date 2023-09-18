@@ -34,7 +34,7 @@ CONFIG_FILE=inventory/mycluster/hosts.yaml python3 contrib/inventory_builder/inv
 cat inventory/mycluster/group_vars/all/all.yml
 cat inventory/mycluster/group_vars/k8s_cluster/k8s-cluster.yml
 
-# Clean up old Kubernete cluster with Ansible Playbook - run the playbook as root
+# Clean up old Kubernetes cluster with Ansible Playbook - run the playbook as root
 # The option `--become` is required, as for example cleaning up SSL keys in /etc/,
 # uninstalling old packages and interacting with various systemd daemons.
 # Without --become the playbook will fail to run!
@@ -75,11 +75,11 @@ You will then need to use [bind mounts](https://docs.docker.com/storage/bind-mou
 to access the inventory and SSH key in the container, like this:
 
 ```ShellSession
-git checkout v2.22.1
-docker pull quay.io/kubespray/kubespray:v2.22.1
+git checkout v2.23.0
+docker pull quay.io/kubespray/kubespray:v2.23.0
 docker run --rm -it --mount type=bind,source="$(pwd)"/inventory/sample,dst=/inventory \
   --mount type=bind,source="${HOME}"/.ssh/id_rsa,dst=/root/.ssh/id_rsa \
-  quay.io/kubespray/kubespray:v2.22.1 bash
+  quay.io/kubespray/kubespray:v2.23.0 bash
 # Inside the container you may now run the kubespray playbooks:
 ansible-playbook -i /inventory/inventory.ini --private-key /root/.ssh/id_rsa cluster.yml
 ```
@@ -161,14 +161,14 @@ Note: Upstart/SysV init based OS types are not supported.
 ## Supported Components
 
 - Core
-  - [kubernetes](https://github.com/kubernetes/kubernetes) v1.27.5
-  - [etcd](https://github.com/etcd-io/etcd) v3.5.6
+  - [kubernetes](https://github.com/kubernetes/kubernetes) v1.28.2
+  - [etcd](https://github.com/etcd-io/etcd) v3.5.7
   - [docker](https://www.docker.com/) v20.10 (see note)
-  - [containerd](https://containerd.io/) v1.7.3
+  - [containerd](https://containerd.io/) v1.7.6
   - [cri-o](http://cri-o.io/) v1.27 (experimental: see [CRI-O Note](docs/cri-o.md). Only on fedora, ubuntu and centos based OS)
 - Network Plugin
   - [cni-plugins](https://github.com/containernetworking/plugins) v1.2.0
-  - [calico](https://github.com/projectcalico/calico) v3.25.1
+  - [calico](https://github.com/projectcalico/calico) v3.25.2
   - [cilium](https://github.com/cilium/cilium) v1.13.4
   - [flannel](https://github.com/flannel-io/flannel) v0.22.0
   - [kube-ovn](https://github.com/alauda/kube-ovn) v1.11.5
@@ -202,7 +202,7 @@ Note: Upstart/SysV init based OS types are not supported.
 
 ## Requirements
 
-- **Minimum required version of Kubernetes is v1.25**
+- **Minimum required version of Kubernetes is v1.26**
 - **Ansible v2.14+, Jinja 2.11+ and python-netaddr is installed on the machine that will run Ansible commands**
 - The target servers must have **access to the Internet** in order to pull docker images. Otherwise, additional configuration is required (See [Offline Environment](docs/offline-environment.md))
 - The target servers are configured to allow **IPv4 forwarding**.
