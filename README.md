@@ -121,7 +121,6 @@ vagrant up
 - [Vagrant install](docs/vagrant.md)
 - [Flatcar Container Linux bootstrap](docs/flatcar.md)
 - [Fedora CoreOS bootstrap](docs/fcos.md)
-- [Debian Jessie setup](docs/debian.md)
 - [openSUSE setup](docs/opensuse.md)
 - [Downloaded artifacts](docs/downloads.md)
 - [Cloud providers](docs/cloud.md)
@@ -161,11 +160,11 @@ Note: Upstart/SysV init based OS types are not supported.
 ## Supported Components
 
 - Core
-  - [kubernetes](https://github.com/kubernetes/kubernetes) v1.28.6
+  - [kubernetes](https://github.com/kubernetes/kubernetes) v1.29.1
   - [etcd](https://github.com/etcd-io/etcd) v3.5.10
   - [docker](https://www.docker.com/) v20.10 (see note)
-  - [containerd](https://containerd.io/) v1.7.11
-  - [cri-o](http://cri-o.io/) v1.27 (experimental: see [CRI-O Note](docs/cri-o.md). Only on fedora, ubuntu and centos based OS)
+  - [containerd](https://containerd.io/) v1.7.13
+  - [cri-o](http://cri-o.io/) v1.29.1 (experimental: see [CRI-O Note](docs/cri-o.md). Only on fedora, ubuntu and centos based OS)
 - Network Plugin
   - [cni-plugins](https://github.com/containernetworking/plugins) v1.2.0
   - [calico](https://github.com/projectcalico/calico) v3.26.4
@@ -178,7 +177,7 @@ Note: Upstart/SysV init based OS types are not supported.
   - [kube-vip](https://github.com/kube-vip/kube-vip) v0.5.12
 - Application
   - [cert-manager](https://github.com/jetstack/cert-manager) v1.13.2
-  - [coredns](https://github.com/coredns/coredns) v1.10.1
+  - [coredns](https://github.com/coredns/coredns) v1.11.1
   - [ingress-nginx](https://github.com/kubernetes/ingress-nginx) v1.9.4
   - [krew](https://github.com/kubernetes-sigs/krew) v0.4.4
   - [argocd](https://argoproj.github.io/) v2.8.4
@@ -202,7 +201,7 @@ Note: Upstart/SysV init based OS types are not supported.
 
 ## Requirements
 
-- **Minimum required version of Kubernetes is v1.26**
+- **Minimum required version of Kubernetes is v1.27**
 - **Ansible v2.14+, Jinja 2.11+ and python-netaddr is installed on the machine that will run Ansible commands**
 - The target servers must have **access to the Internet** in order to pull docker images. Otherwise, additional configuration is required (See [Offline Environment](docs/offline-environment.md))
 - The target servers are configured to allow **IPv4 forwarding**.
